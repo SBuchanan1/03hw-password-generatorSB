@@ -1,5 +1,52 @@
-function generatePassword() {
-    var index = Math.floor(Math.random() * n);
-    yourPassword += confirmedSelection.charAt(index);
+// This variable is the assignment 
+var generateBTn = document.querySelector("generate");
 
-} return yourPassword;
+// Function to write password
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("password");
+
+    passwordText.val = password;
+}
+function generatePassword() {
+    var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    var characters = "!@#$%^&*()";
+    var numbers = "0123456789";
+    var confirmedSelection = "";
+
+    do {
+
+        var passwordLength = prompt(
+            "Choose a between 8 and 128 characters, how long is your password?"
+        );
+        passwordLength = parseInt(passwordLength);
+    } while (passwordLength < 8 || passwordLength > 128);
+
+    while (confirmedSelection == "") {
+        var lowercaseLetters = confirm("Would you like lowercase letters?");
+        var uppercaseLetters = confirm("Would you like uppercase letters?");
+        var characters = confirm("Would you like to include characters?");
+        var numbers = confirm("Would you like to include numbers?");
+
+        if (lowercaseLetters === true) {
+            confirmedSelection += lowercaseLetters;
+        }
+        if (uppercaseLetters === true) {
+            confirmedSelection += uppercaseLetters;
+
+        }
+        if (characters === true) {
+            confirmedSelection += characters;
+        }
+        if (numbers === true) {
+            confirmedSelection += numbers;
+        }
+    }
+
+}
+// function generatePassword() {
+//     var index = Math.floor(Math.random() * n);
+//     yourPassword += confirmedSelection.charAt(index);
+
+// } return yourPassword;
