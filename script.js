@@ -1,6 +1,9 @@
 // This variable is the assignment 
 var generateBTn = document.querySelector("generate");
 
+// Add event listener for button click
+generateBTn.addEventListener("click", writePassword);
+
 // Function to write password
 function writePassword() {
     var password = generatePassword();
@@ -42,11 +45,16 @@ function generatePassword() {
         if (numbers === true) {
             confirmedSelection += numbers;
         }
+        if (confirmedSelection == "") {
+            alert("Please choose at least one character type");
+        }
     }
-
+    var yourPassword = "";
+    for (var i = 0, n = confirmedSelection.length; i < passwordLength; i++) {
+        var index = Math.floor(Math.random() * n);
+    }
+    return yourPassword;
 }
-// function generatePassword() {
-//     var index = Math.floor(Math.random() * n);
-//     yourPassword += confirmedSelection.charAt(index);
 
-// } return yourPassword;
+// Return user's password 
+
