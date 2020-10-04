@@ -12,6 +12,7 @@ function writePassword() {
     passwordText.val = password;
 }
 function generatePassword() {
+    var passwordLength = "numCharacters";
     var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
     var characters = "!@#$%^&*()";
@@ -54,7 +55,7 @@ function generatePassword() {
         var index = Math.floor(Math.random() * n);
     }
     return yourPassword;
-}
+
 
 // Return user's password 
 
