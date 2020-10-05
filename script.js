@@ -17,44 +17,45 @@ function generatePassword() {
     var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
     var characters = "!@#$%^&*()";
     var numbers = "0123456789";
-    var confirmedSelection = "";
+    // var confirmedSelection = "";
 
-    do {
+    // Function to write password 
+    function writePassword() {
+        var password = generatePassword();
+        var passwordText = document.querySelector("password");
 
-        var passwordLength = prompt(
-            "Choose a between 8 and 128 characters, how long is your password?"
-        );
-        passwordLength = parseInt(passwordLength);
-    } while (passwordLength < 8 || passwordLength > 128);
-
-    while (confirmedSelection == "") {
-        var lowercaseLetters = confirm("Would you like lowercase letters?");
-        var uppercaseLetters = confirm("Would you like uppercase letters?");
-        var characters = confirm("Would you like to include characters?");
-        var numbers = confirm("Would you like to include numbers?");
-
-        if (lowercaseLetters === true) {
-            confirmedSelection += lowercaseLetters;
-        }
-        if (uppercaseLetters === true) {
-            confirmedSelection += uppercaseLetters;
-
-        }
-        if (characters === true) {
-            confirmedSelection += characters;
-        }
-        if (numbers === true) {
-            confirmedSelection += numbers;
-        }
-        if (confirmedSelection == "") {
-            alert("Please choose at least one character type");
-        }
+        passwordText.value = password;
     }
-    var yourPassword = "";
-    for (var i = 0, n = confirmedSelection.length; i < passwordLength; i++) {
-        var index = Math.floor(Math.random() * n);
+
+
+
+    //     var lowercaseLetters = confirm("Would you like lowercase letters?");
+    //     var uppercaseLetters = confirm("Would you like uppercase letters?");
+    //     var characters = confirm("Would you like to include characters?");
+    //     var numbers = confirm("Would you like to include numbers?");
+
+    if (lowercaseLetters === true) {
+        confirmedSelection += lowercaseLetters;
     }
-    return yourPassword;
+    if (uppercaseLetters === true) {
+        confirmedSelection += uppercaseLetters;
+
+    }
+    if (characters === true) {
+        confirmedSelection += characters;
+    }
+    if (numbers === true) {
+        confirmedSelection += numbers;
+    }
+    if (confirmedSelection == "") {
+        alert("Please choose at least one character type");
+    }
+}
+var yourPassword = "";
+for (var i = 0, n = confirmedSelection.length; i < passwordLength; i++) {
+    var index = Math.floor(Math.random() * n);
+}
+return yourPassword;
 
 
 // Return user's password 
