@@ -27,13 +27,23 @@ function generatePassword() {
         passwordText.value = password;
     }
 
+    // Event Listeners
+    generateBTn.addEventListener("click", writePassword);
 
+    function generatePassword() {
 
-    //     var lowercaseLetters = confirm("Would you like lowercase letters?");
-    //     var uppercaseLetters = confirm("Would you like uppercase letters?");
-    //     var characters = confirm("Would you like to include characters?");
-    //     var numbers = confirm("Would you like to include numbers?");
+    }
+    passwordLength = prompt("Pick a character count between 8 and 128 for your password:")
 
+    var lowercaseLetters = confirm("Would you like lowercase letters?");
+    var uppercaseLetters = confirm("Would you like uppercase letters?");
+    var characters = confirm("Would you like to include characters?");
+    var numbers = confirm("Would you like to include numbers?");
+
+    if (passwordLength < 8 || passwordLength > 128) {
+        prompt("Please enter a password between 8 and 128 characters:")
+    }
+    // console.log("Password character length: ", passwordLength)
     if (lowercaseLetters === true) {
         confirmedSelection += lowercaseLetters;
     }
