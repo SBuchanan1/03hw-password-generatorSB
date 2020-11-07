@@ -4,7 +4,16 @@ var password = ""
 
 // Write password to the #password input
 function writePassword() {
-  var passwordLengthPrompt = prompt("Please enter your desired password. It must be between 12 and 128 characters")
+  var newPassword = "";
+  do {
+    var passwordLength = prompt("Please enter your desired password. It must be between 8 and 128 characters");
+    passwordLength = parseInt(passwordLength);
+  }
+  while (8 > passwordLength || passwordLength > 128);
+
+  // character sets
+  var newCharSet = "";
+
   var numArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",]
   var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", ".", "+", "-", "_"]
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
